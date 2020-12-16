@@ -1,3 +1,5 @@
+# Exercises for https://ds.codeup.com/sql/mysql-introduction/
+
 # * means all columns from a database table
 SELECT * FROM mysql.user;
 
