@@ -18,7 +18,7 @@ LIMIT 10;
 SELECT DISTINCT title
 FROM titles;
 
--- List the first 10 distinct last name sorted in descending order. (I'm going to use employees for lat_name)
+-- List the first 10 distinct last name sorted in descending order. (I'm going to use employees for last_name)
 
 SELECT DISTINCT last_name 
 FROM employees 
