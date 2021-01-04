@@ -118,9 +118,9 @@ SELECT
 					)
 				) AS username,
 		COUNT(*) AS number_of_duplicates
-	FROM employees
-	GROUP BY username
-	HAVING number_of_duplicates > 1;
+FROM employees
+GROUP BY username
+HAVING number_of_duplicates > 1;
 
 -- Now return the number of unique duplicate usernames AND the total of duplicate usernames.
 
