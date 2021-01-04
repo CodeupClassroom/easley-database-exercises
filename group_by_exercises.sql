@@ -137,7 +137,7 @@ FROM (SELECT
 					SUBSTR(birth_date, 3, 2)
 					)
 				) AS username,
-		COUNT(*) AS number_of_duplicates
-		FROM employees
-		GROUP BY username
-		HAVING number_of_duplicates > 1) as t;
+	COUNT(*) AS number_of_duplicates
+	FROM employees
+	GROUP BY username
+	HAVING number_of_duplicates > 1) as t;
