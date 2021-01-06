@@ -105,10 +105,10 @@ SELECT
 	CONCAT(first_name, ' ', last_name) AS female_managers
 FROM employees
 WHERE emp_no IN (
-			SELECT
-				emp_no
-			FROM dept_manager
-			WHERE to_date > CURDATE()
+	SELECT
+		emp_no
+	FROM dept_manager
+	WHERE to_date > CURDATE()
 				)
 AND gender = 'F';
 
@@ -133,10 +133,10 @@ FROM employees AS e
 JOIN salaries AS s ON e.emp_no = s.emp_no
 	AND to_date > CURDATE()
 WHERE salary > (
-			SELECT
-				AVG(salary) AS historical_average_salary
-			FROM salaries
-			);
+	SELECT
+		AVG(salary) AS historical_average_salary
+	FROM salaries
+	);
 
 
 -- 6. How many current salaries are within 1 standard deviation of the current highest salary? (Hint: you can use a built in function to calculate the standard deviation.) What percentage of all salaries is this?
@@ -154,11 +154,11 @@ SELECT
 FROM salaries 
 WHERE to_date > CURDATE()
 AND salary > (
-			SELECT
-				(MAX(salary) - STDDEV(salary))
-			FROM salaries
-			WHERE to_date > CURDATE()
-			);
+	SELECT
+		(MAX(salary) - STDDEV(salary))
+	FROM salaries
+	WHERE to_date > CURDATE()
+	);
 			  
 -- Use my query from above now as a subquery!
 		 
@@ -169,10 +169,10 @@ SELECT
 		FROM salaries 
 		WHERE to_date > CURDATE()
 		AND salary > (
-				SELECT
-					(MAX(salary) - STDDEV(salary))
-				FROM salaries
-				WHERE to_date > CURDATE())
+			SELECT
+				(MAX(salary) - STDDEV(salary))
+			FROM salaries
+			WHERE to_date > CURDATE())
 		) 
 / 
 		(
